@@ -13,18 +13,16 @@ public class CategoriaService {
     @Autowired
     private CategoriaRepository categoriaRepository;
 
+    //PARA CRUD
     public List<Categorias> getAllCategorias() {
         return categoriaRepository.findAll();
     }
-
     public Optional<Categorias> getCategoriaById(int id) {
         return categoriaRepository.findById(id);
     }
-
     public Categorias createCategoria(Categorias cargo) {
         return categoriaRepository.save(cargo);
     }
-
     public Categorias updateCategoria(int id, Categorias categoria) {
         if (categoriaRepository.existsById(id)) {
             categoria.setId(id);
@@ -32,7 +30,6 @@ public class CategoriaService {
         }
         return null;
     }
-
     public void deleteCategoria(int id) {
         categoriaRepository.deleteById(id);
     }

@@ -13,18 +13,16 @@ public class CargoService {
     @Autowired
     private CargoRepository crepo;
 
+    //PARA CRUD
     public List<Cargos> getAllCargos() {
         return crepo.findAll();
     }
-
     public Optional<Cargos> getCargoById(int id) {
         return crepo.findById(id);
     }
-
     public Cargos createCargo(Cargos cargo) {
         return crepo.save(cargo);
     }
-
     public Cargos updateCargo(int id, Cargos cargo) {
         if (crepo.existsById(id)) {
             cargo.setId(id);
@@ -32,7 +30,6 @@ public class CargoService {
         }
         return null;
     }
-
     public void deleteCargo(int id) {
         crepo.deleteById(id);
     }

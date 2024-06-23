@@ -1,4 +1,7 @@
 package org.example.proyecto_backend.repositories;
 
-public interface DetallesPedidoRepository {
+import org.example.proyecto_backend.entities.DetallesPedido;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface DetallesPedidoRepository extends JpaRepository<DetallesPedido, Integer> {
 }
