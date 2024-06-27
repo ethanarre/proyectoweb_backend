@@ -10,6 +10,8 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/estados")
+@CrossOrigin("*")
+
 public class EstadoController {
     @Autowired
     private EstadoService estadoService;

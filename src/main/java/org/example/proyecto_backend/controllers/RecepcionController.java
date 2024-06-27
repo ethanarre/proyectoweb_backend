@@ -10,6 +10,8 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/recepciones")
+@CrossOrigin("*")
+
 public class RecepcionController {
     @Autowired
     private RecepcionService recepcionService;

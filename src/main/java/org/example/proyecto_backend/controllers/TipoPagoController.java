@@ -10,6 +10,8 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/tipopagos")
+@CrossOrigin("*")
+
 public class TipoPagoController {
     @Autowired
     private TipoPagoService tipoPagoService;

@@ -20,6 +20,12 @@ public class Empleados{
     @Column( name = "Apellido" )
     private String apellido;
 
+    @Column( name = "Email")
+    private String email;
+
+    @Column( name = "Contrasena")
+    private String contrasena;
+
     @ManyToOne
     @JoinColumn(name = "Id_Cargo", referencedColumnName = "Id")
     private Cargos idCargo;
@@ -37,10 +43,12 @@ public class Empleados{
     public Empleados() {
     }
 
-    public Empleados(int id, String nombre, String apellido, Cargos idCargo, String dni, String celular, LocalDateTime fechaContratado) {
+    public Empleados(int id, String nombre, String apellido, String email, String contrasena, Cargos idCargo, String dni, String celular, LocalDateTime fechaContratado) {
         this.id = id;
         this.nombre = nombre;
         this.apellido = apellido;
+        this.email = email;
+        this.contrasena = contrasena;
         this.idCargo = idCargo;
         this.dni = dni;
         this.celular = celular;
@@ -69,11 +77,25 @@ public class Empleados{
         this.apellido = apellido;
     }
 
-    public Cargos getCargos() {
+    public String getEmail() {
+        return email;
+    }
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getContrasena() {
+        return contrasena;
+    }
+    public void setContrasena(String contrasena) {
+        this.contrasena = contrasena;
+    }
+
+    public Cargos getIdCargo() {
         return idCargo;
     }
-    public void setCargos(Cargos cargo) {
-        this.idCargo = cargo;
+    public void setIdCargo(Cargos idCargo) {
+        this.idCargo = idCargo;
     }
 
     public String getDni() {
@@ -95,5 +117,10 @@ public class Empleados{
     }
     public void setFechaContratado(LocalDateTime fechaContratado) {
         this.fechaContratado = fechaContratado;
+    }
+
+    @PrePersist
+    protected void onCreate() {
+        this.fechaContratado = LocalDateTime.now();
     }
 }

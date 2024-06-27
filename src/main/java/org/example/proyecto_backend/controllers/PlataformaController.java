@@ -10,6 +10,8 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/plataformas")
+@CrossOrigin("*")
+
 public class PlataformaController {
     @Autowired
     private PlataformaService plataformaService;

@@ -10,6 +10,8 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/videojuegos")
+@CrossOrigin("*")
+
 public class VideojuegoController {
     @Autowired
     private VideojuegoService videojuegoService;

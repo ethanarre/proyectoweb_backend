@@ -32,4 +32,9 @@ public class EmpleadoService {
     public void deleteEmpleado(int id) {
         empleadoRepository.deleteById(id);
     }
+
+    public Optional<Empleados> getEmpleadoByEmail(String email) {
+        return empleadoRepository.findByEmail(email);
+    }
+
 }

@@ -11,6 +11,8 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/desarrolladores")
+@CrossOrigin("*")
+
 public class DesarrolladorController {
     @Autowired
     private DesarrolladorService desarrolladorService;

@@ -11,6 +11,8 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/clientes")
+@CrossOrigin("*")
+
 public class ClienteController {
     @Autowired
     private ClienteService clienteService;
