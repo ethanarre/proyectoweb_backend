@@ -14,6 +14,13 @@ public class Videojuegos {
     @Column( name = "Nombre" )
     private String nombre;
 
+    @Lob
+    @Column( name = "Imagen" )
+    private byte[] imagen;
+
+    @Column( name = "Descripcion" )
+    private String descripcion;
+
     @ManyToOne
     @JoinColumn( name = "Id_Categoria", referencedColumnName = "Id" )
     private Categorias idCategoria;
@@ -34,9 +41,11 @@ public class Videojuegos {
 
     //Constructores
     public Videojuegos() {}
-    public Videojuegos(int id, String nombre, Categorias idCategoria, Desarrolladores idDesarrollador, Plataformas idPlataforma, double precio, int stock) {
+    public Videojuegos(int id, String nombre, byte[] imagen, String descripcion, Categorias idCategoria, Desarrolladores idDesarrollador, Plataformas idPlataforma, double precio, int stock) {
         this.id = id;
         this.nombre = nombre;
+        this.imagen = imagen;
+        this.descripcion = descripcion;
         this.idCategoria = idCategoria;
         this.idDesarrollador = idDesarrollador;
         this.idPlataforma = idPlataforma;
@@ -58,6 +67,20 @@ public class Videojuegos {
     }
     public void setNombre(String nombre) {
         this.nombre = nombre;
+    }
+
+    public byte[] getImagen() {
+        return imagen;
+    }
+    public void setImagen(byte[] imagen) {
+        this.imagen = imagen;
+    }
+
+    public String getDescripcion() {
+        return descripcion;
+    }
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
     }
 
     public Categorias getIdCategoria() {
