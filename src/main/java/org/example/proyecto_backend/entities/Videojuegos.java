@@ -15,7 +15,7 @@ public class Videojuegos {
     private String nombre;
 
     @Lob
-    @Column( name = "Imagen" )
+    @Column( name = "Imagen", columnDefinition = "MEDIUMBLOB")
     private byte[] imagen;
 
     @Column( name = "Descripcion" )
